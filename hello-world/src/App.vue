@@ -1,17 +1,26 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <img alt="Vue logo" src="./assets/logo.png" />
+  <h2 v-bind:id="headingId">This is Heading attribute</h2>
+  <div>
+    <div>
+      <button v-bind:disabled="isDisabled">Bind</button>
+    </div>
+    <div>
+      <button v-bind:disabled="!isDisabled">Bind</button>
+    </div>
+  </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
-
 export default {
-  name: 'App',
-  components: {
-    HelloWorld
-  }
-}
+  name: "App",
+  data() {
+    return {
+      headingId: "heading",
+      isDisabled: true,
+    };
+  },
+};
 </script>
 
 <style>
